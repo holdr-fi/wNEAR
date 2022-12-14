@@ -38,7 +38,7 @@ contract WNEAR is ERC20 {
      * @dev Burn wNEAR, withdraw NEAR
      * @param amount Amount of wNEAR to unwrap
      */
-    function withdraw(uint256 amount) public {
+    function withdraw(uint256 amount) external {
         _burn(msg.sender, amount);
         // Pad by least significant 6 digits
         IERC20(NEAR).safeTransfer(msg.sender, amount * SCALE_FACTOR);
