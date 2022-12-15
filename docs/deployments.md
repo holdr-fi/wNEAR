@@ -1,0 +1,4 @@
+# Mumbai testnet deploymnts
+
+mockNEAR deployed to 0x0D6889Aaa61e01E7C886DB95512e6D608fe85F30
+mockWNEAR deployed to 0x1e68Ff3D38F16f397883b7F8445ddF675A3A729d

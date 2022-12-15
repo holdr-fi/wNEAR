@@ -1,4 +1,4 @@
-// Wrapper contract for NEAR that truncates decimals from 24 decimals to 18 decimals. Required for compatibility with Balancer contracts.
+// Mock WNEAR contract for testnet
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
-contract WNEAR is ERC20 {
+contract MOCK_WNEAR is ERC20 {
     using SafeERC20 for IERC20;
 
     /**
@@ -16,9 +16,11 @@ contract WNEAR is ERC20 {
      * @dev Multiply by SCALE_FACTOR for wNEAR -> NEAR, i.e. 1e18 wNEAR == 1e24 NEAR
      */
     uint256 constant public SCALE_FACTOR = 1e6;
-    address constant public NEAR = 0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d;
+    address immutable public NEAR;
 
-    constructor() ERC20("Wrapped NEAR", "wNEAR") {}
+    constructor(address _NEAR) ERC20("Wrapped NEAR", "wNEAR") {
+        NEAR = _NEAR;
+    }
 
     /**
      * @notice Wrap NEAR into wNEAR

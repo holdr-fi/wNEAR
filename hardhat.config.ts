@@ -21,10 +21,18 @@ const config: HardhatUserConfig = {
       gas: 12000000,
       blockGasLimit: 0x1fffffffffffff,
     },
+    polygonMumbai: {
+      url: process.env.MUMBAI_URL,
+      chainId: 80001,
+      accounts: JSON.parse(process.env.PRIVATE_KEYS || '[]'),
+      gas: 12000000,
+      blockGasLimit: 0x1fffffffffffff,
+    },
   },
   etherscan: {
     apiKey: {
       aurora: process.env.AURORASCAN_API_KEY || '',
+      polygonMumbai: process.env.POLYGONSCAN_API_KEY || '',
     },
   },
   // gasReporter: {
