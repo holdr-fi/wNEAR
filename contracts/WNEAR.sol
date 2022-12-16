@@ -11,7 +11,7 @@ contract WNEAR is ERC20 {
     using SafeERC20 for IERC20;
 
     /**
-     * @notice Scale factor betwen wNEAR and hNEAR
+     * @notice Scale factor betwen wNEAR and NEAR
      * @dev Divide by SCALE_FACTOR for NEAR -> wNEAR, i.e. 1e24 NEAR == 1e18 wNEAR
      * @dev Multiply by SCALE_FACTOR for wNEAR -> NEAR, i.e. 1e18 wNEAR == 1e24 NEAR
      */
@@ -28,7 +28,7 @@ contract WNEAR is ERC20 {
     function deposit(uint256 amount) external {
         // Don't strictly need this require statement as ERC20.sol involves balance checks. However without this require statement, using amount < 1e6 would succeed even if msg.sender has no NEAR, because we zero out the least significant 6 digits before calling safeTransferFrom.
         require(IERC20(NEAR).balanceOf(msg.sender) >= amount, "insufficient NEAR balance");
-        // Zero out least significant 6 digits
+        // Zero out least significant 6 digits (implicit refund of least significant 6 digits of NEAR)
         IERC20(NEAR).safeTransferFrom(msg.sender, address(this), amount / SCALE_FACTOR * SCALE_FACTOR);
         // Truncate by least significant 6 digits
         _mint(msg.sender, amount / SCALE_FACTOR);

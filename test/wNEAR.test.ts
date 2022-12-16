@@ -99,6 +99,7 @@ describe('wNEAR', function () {
     it('poorGuy can take out NEAR if they are given wNEAR', async function () {
       await wNEAR.connect(richGuy).transfer(poorGuy.address, 1000);
       expect(await wNEAR.balanceOf(richGuy.address)).eq(0);
+      expect(await wNEAR.balanceOf(poorGuy.address)).eq(1000);
       const tx = await wNEAR.connect(poorGuy).withdraw(1000);
       expect(await wNEAR.balanceOf(poorGuy.address)).eq(0);
       expect(await NEAR.balanceOf(poorGuy.address)).eq(SCALE_FACTOR.mul(1000));
