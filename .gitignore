@@ -9,5 +9,6 @@ typechain-types
 cache
 artifacts
 
-scripts/metadata/*
-scripts/images/*
+#Foundry files
+out
+forge-cache
