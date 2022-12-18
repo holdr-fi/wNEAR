@@ -10,4 +10,6 @@ Unit tests written in both Hardhat and Foundry frameworks. Using Foundry framewo
 
 Hardhat test `npx hardhat test`
 
-Foundry test `forge test -vvv`
+Foundry test of mock contracts with fuzzing `forge test --match-contract MOCK_WNEAR_Test -vvv`
+
+Foundry test of production contract with Aurora fork and fuzzing `forge test --match-contract NEAR_Aurora_Fork_Test --fork-url https://mainnet.aurora.dev --fork-block-number 80931300 -vvv`
