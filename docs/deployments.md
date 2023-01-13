@@ -1,6 +1,7 @@
 # Aurora deployment
 
 wNEAR deployed to 0x6BB0c4d909a84d118B5e6c4b17117e79E621ae94
+wstNEAR deployed to 0x120908185dC7f4d4AE8B32C376484406cC16731A
 
 # Mumbai testnet deployments
 
