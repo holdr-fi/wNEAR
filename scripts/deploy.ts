@@ -5,10 +5,10 @@ async function main() {
   // const wNEAR = await WNEAR.deploy();
   // await wNEAR.deployed();
   // console.log(`wNEAR deployed to ${wNEAR.address}`);
-  const WSTNEAR = await ethers.getContractFactory('WSTNEAR');
-  const wSTNEAR = await WSTNEAR.deploy();
-  await wSTNEAR.deployed();
-  console.log(`wNEAR deployed to ${wSTNEAR.address}`);
+  const WMETA = await ethers.getContractFactory('WMETA');
+  const wMETA = await WMETA.deploy();
+  await wMETA.deployed();
+  console.log(`wMETA deployed to ${wMETA.address}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

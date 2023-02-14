@@ -2,6 +2,7 @@
 
 wNEAR deployed to 0x6BB0c4d909a84d118B5e6c4b17117e79E621ae94
 wstNEAR deployed to 0x120908185dC7f4d4AE8B32C376484406cC16731A
+wMETA deployed to 0x71B61b0c931Cad9E9a3Cae116C5f48A865c0fC7B
 
 # Mumbai testnet deployments
 

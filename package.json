@@ -20,6 +20,7 @@
   "scripts": {
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
+    "deploy": "npx hardhat run --network aurora scripts/deploy.ts",
     "deploy-mock": "npx hardhat run --network polygonMumbai scripts/deployMocks.ts"
   }
 }
